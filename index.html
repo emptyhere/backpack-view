@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <header class="--border-bottom-solid">
+        <div class="container --right">
+            <div id="modalSignInBtn" class="row sign-in">
+                <span class="title">
+                    Вход на сайт
+                </span>
+
+                <span class="icon">
+                    <i class="fa fa-lock"></i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container row --right">
+        <div class="favorite" id="modalFavoriteBtn">
+            <i class="fa fa-heart-o fa-lg icon" aria-hidden="true">
+                <span class="favorite-counter --mt5 --block">0</span>
+            </i>
+        </div>
+        <div class="cart" id="modalCartBtn">
+            <i class="fa fa-shopping-bag fa-lg icon" aria-hidden="true">
+                <span class="cart-counter --mt5 --block">0</span>
+            </i>
+        </div>
+    </div>
+
+    <main class="container row">
+        <div class="product-card col">
+            <div class="slider">
+                <div><img src="imgs/green.png" alt="green" /></div>
+                <div><img src="imgs/yellow.png" alt="green" /></div>
+            </div>
+        </div>
+        <ul class="product-info col">
+            <li class="title-and-rating --border-bottom-solid">
+                <span class="title">Рюкзак PUMA</span>
+                <span class="rating">
+                    <i class="fa fa-star-o unchecked --pointer" id="rate-1"></i>
+                    <i class="fa fa-star-o unchecked --pointer" id="rate-2"></i>
+                    <i class="fa fa-star-o unchecked --pointer" id="rate-3"></i>
+                    <i class="fa fa-star-o unchecked --pointer" id="rate-4"></i>
+                    <i class="fa fa-star-o unchecked --pointer" id="rate-5"></i>
+                </span>
+            </li>
+            <li class="price --border-bottom-dashed">
+                <div class="price-content">
+                    <span class="cost">5 000.00</span>
+                    <span class="count"> KZT / Шт.</span>
+                </div>
+            </li>
+            <li class="colors --border-bottom-dashed">
+                <div class="colors-content">
+                    <span class="title">Цвет:</span>
+                    <button class="green choose-color --pointer">
+                        <span class="color-preview"></span>
+                        <span class="color-title">Зеленый</span>
+                    </button>
+                    <button class="yellow choose-color --pointer">
+                        <span class="color-preview"></span>
+                        <span class="color-title">Желтый</span>
+                    </button>
+                </div>
+            </li>
+            <li class="delivery --border-bottom-dashed">
+                <div class="delivery-content">
+                    <span class="title">Способ доставки:</span>
+                    <div class="tabs">
+                        <span class="pickup-tab">
+                            <input type="radio" name="delivery" class="pickup" value="pickup" checked>
+                            Самовывоз
+                        </span>
+
+                        <span class="deliver-tab">
+                            <input type="radio" name="delivery" class="deliver" value="deliver">
+                            Доставка
+                        </span>
+                    </div>
+                    <div class="tabs-panels">
+
+                        <div class="tabs-panel pickup-content">
+                            <div class="tab-title">Пункты самовывоза:</div>
+                            <span class="tab-element pickup-1">
+                                <input type="radio" name="pickup" class="" value="pickup-1" checked>
+                                Мангеликель 13
+                            </span>
+                            <span class="tab-element pickup-2">
+                                <input type="radio" name="pickup" class="" value="pickup-2">
+                                Шоурум 37
+                            </span>
+                        </div>
+                        <div class="tabs-panel deliver-content">
+                            <div class="tab-title">Доставка:</div>
+                            <span class="tab-element deliver-1">
+                                <input type="radio" name="deliver" class="deliver-1" value="deliver-1" checked>
+                                Почта России
+                            </span>
+                            <span class="tab-element deliver-2">
+                                <input type="radio" name="deliver" class="" value="deliver-2">
+                                CDEC
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="actions --border-bottom-dashed">
+                <div class="add-to-action">
+                    <button class="add-to-cart">
+                        <i class="fa fa-shopping-bag icon" aria-hidden="true"></i>
+                        <span class="title">Добавить в корзину</span>
+                    </button>
+                    <button class="add-to-favorite">
+                        <i class="fa fa-heart-o icon" aria-hidden="true"></i>
+                        <span class="title">В избранное</span>
+                    </button>
+                </div>
+            </li>
+            <li class="counters">
+                <span class="title">Товаров в корзине:
+                    <span class="cart-counter"></span>
+                </span>
+                <span class="title --ml25">В избранном:
+                    <span class="favorite-counter"></span>
+                </span>
+            </li>
+        </ul>
+    </main>
+
+    <div id="modalSignIn" class="modal fadein">
+        <div class="modal-content --mw300">
+            <span class="close">&times;</span>
+            <form class="sign-in-form">
+                <input type="text" class="form-input input-effect" placeholder="Логин" required>
+                <input type="password" class="form-input input-effect" placeholder="Пароль" required>
+                <input type="text" class="form-input input-effect" id="email" placeholder="E-mail" required>
+                <small id="email-valid"></small>
+                <input type="tel" class="form-input input-effect" id="phone" placeholder="Телефон" required>
+                <small id="phone-valid"></small>
+                <button id="sign-in-button">Вход
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalCart" class="modal fadein">
+        <div class="modal-content fadein-content">
+            <span class="close">&times;</span>
+            <div class="divider"></div>
+            <div id="cart-content">
+            </div>
+            <i class="fa fa-trash --pointer" id="clean-cart" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div id="modalFavorite" class="modal fadein">
+        <div class="modal-content fadein-content">
+            <span class="close">&times;</span>
+            <div class="divider"></div>
+            <div id="favorite-content">
+            </div>
+            <i class="fa fa-trash --pointer" id="clean-favorite" aria-hidden="true"></i>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/slick/slick.min.js"></script>
+    <script src="js/slick/slick.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
